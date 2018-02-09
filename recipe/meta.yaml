@@ -23,6 +23,7 @@ requirements:
   run:
     - python
     - pytest
+    - faulthandler  # [py27]
 
 test:
   imports:
