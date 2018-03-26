@@ -1,7 +1,7 @@
 {% set name = "pytest-faulthandler" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 {% set hash_type = "sha256" %}
-{% set hash = "40136337387bf07f30058e3f970558a96f5539348c2dac7b65602cc77edc71ae" %}
+{% set hash = "bf8634c3fd6309ef786ec03b913a5366163fdb094ebcfdebc35626400d790e0d" %}
 
 package:
   name: {{ name }}
