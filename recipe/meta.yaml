@@ -13,28 +13,22 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
-  number: 0
-  skip: true  # [(ppc64le or aarch64) and py27]
+  number: 0  
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
-    - python
-    - setuptools_scm
+    - python    
     - pip
+    - setuptools
   run:
     - python
-    - pytest
-    - faulthandler  # [py27]
-
-test:
-  imports:
-    - pytest_faulthandler
+    - pytest >=5.0    
 
 about:
   home: https://github.com/pytest-dev/pytest-faulthandler
   license: MIT
-  summary: py.test plugin that activates the fault handler module for tests
+  summary: py.test plugin that activates the fault handler module for tests (dummy package now)
 
 extra:
   recipe-maintainers:
