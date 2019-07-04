@@ -13,6 +13,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   number: 0  
   script: python -m pip install --no-deps --ignore-installed .
 
