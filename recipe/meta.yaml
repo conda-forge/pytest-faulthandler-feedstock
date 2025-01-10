@@ -1,6 +1,5 @@
 {% set name = "pytest-faulthandler" %}
 {% set version = "2.0.1" %}
-{% set hash_type = "sha256" %}
 {% set hash = "ed72bbce87ac344da81eb7d882196a457d4a1026a3da4a57154dacd85cd71ae5" %}
 
 package:
@@ -9,21 +8,21 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ hash }}
 
 build:
   noarch: python
-  number: 0  
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - python    
+  host:
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - pytest >=5.0    
 
 about:
